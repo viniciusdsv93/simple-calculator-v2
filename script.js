@@ -18,7 +18,7 @@ function insertValue(data) {
     }
     else if (data == "=") {
         try {
-            qs('input').value = eval(qs('input').value.replaceAll('x', '*').replaceAll('÷', '/'));
+            qs('input').value = eval(qs('input').value.replaceAll('x', '*').replaceAll('÷', '/').replaceAll(',', '.')).toString().replaceAll('.', ',');
             qs('input').setAttribute('status', 'done');
         }
         catch(err) {
